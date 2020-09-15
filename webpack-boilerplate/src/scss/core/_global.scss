@@ -1,0 +1,106 @@
+/* Global styles */
+
+::selection {
+  background: $very-light-grey;
+  color: $black;
+  text-shadow: 0px 1px 1px rgba(black, 0.6);
+}
+// ::selection {
+//   background: $gold;
+//   color: white;
+//   text-shadow: 0px 1px 1px rgba(black, 0.6);
+// }
+
+html {
+  font-size: 62.5%; //
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+
+  // Remove Gray Highlight When Tapping Links in Mobile
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  @include font-default();
+  font-size: 13px; // font-size: 1.3rem;
+  color: $grey;
+  height: 100%;
+  // background: #1d1c1c;
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  transition: width 0.4s;
+  &:hover,
+  &:active {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// HELPER CLASSES (diff design specific)
+// font
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+//colors
+.white {
+  color: white;
+}
+
+.gold {
+  color: $gold;
+}
+
+.red {
+  color: $red;
+}
+
+.grey {
+  color: $grey;
+}
+
+.light-grey {
+  color: $light-grey;
+}
+
+.dark-grey {
+  color: $dark-grey;
+}
+
+.black {
+  color: $black;
+}
+
+.light-black {
+  color: $light-black;
+}

@@ -1,0 +1,18 @@
+// Mixins and Settings Sass Files
+@import "partials/variables";
+@import "partials/mixins";
+// Vendor Sass Files
+@import "vendor/index";
+// // Core Setup Sass Files
+// @import "core/normalize"; // bootstrap has its own normalization -> Reboot.css
+@import "core/global";
+@import "core/typography";
+
+// custom
+@import './carousel.scss';
+
+// Test CSS import
+@import './test.css';
+
+// responsive
+@import './responsive.scss';

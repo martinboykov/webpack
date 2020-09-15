@@ -1,0 +1,88 @@
+/* Footer */
+.footer {
+  background: #2e3b3e;
+  width: 100%;
+  height: 86px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  color: $grey;
+  font-family: $font-default;
+  font-size: 12px;
+  // flex-shrink: 0;
+  p{
+    text-align: center;
+  }
+}
+
+
+/*
+ ##Device = Desktops
+ min-width = 1366px
+*/
+
+@media screen and (min-width: $laptop + 1px) {
+  // SCSS
+
+}
+
+/*
+	##Device = Laptops, Desktops
+	max-width = 1365px
+*/
+
+@media screen and (max-width: $laptop) {
+
+  // SCSS
+
+}
+
+// --------------------------------------
+// MOBILE PSD
+// --------------------------------------
+
+/*
+	##Device = Tablets, Ipads (portrait)
+	max-width = 1024px
+*/
+
+@media screen and (max-width: $tablet-portrait) {
+
+  // SCSS
+  .footer {
+		font-size: 18px;
+  }
+
+}
+
+ /*
+   ##Device = Low Resolution Tablets, Mobiles (Landscape)
+   max-width = 768px
+*/
+
+@media screen and (max-width: $tablet) {
+
+  // SCSS
+
+}
+
+ /*
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    max-width = 640px
+*/
+
+@media screen and (max-width: $mobile) {
+  // SCSS
+
+}
+
+
+ /*
+    ##Device = Extra small Smartphones Mobiles
+    min-width = 420px max-width = 480px
+*/
+@media screen  and (max-width: $mobile-small) {
+  // SCSS
+
+}

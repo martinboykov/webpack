@@ -1,0 +1,21 @@
+// Mixins and Settings Scss Files
+@import "partials/fonts";
+@import "partials/variables";
+@import "partials/mixins";
+
+// Vendor
+@import "vendor";
+
+// Core Setup Scss Files
+@import "core/normalize";
+@import "core/reset";
+@import "core/global";
+@import "core/typography";
+
+// Layout Scss Files
+@import 'layout/header';
+@import 'layout/footer';
+
+// Pages Scss Files
+@import 'pages/home';
+

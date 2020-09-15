@@ -1,0 +1,25 @@
+// Fonts mixins
+
+@mixin font-default($weight: 400, $style: normal) {
+  font-family: $font-default;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+// Gradients mixins
+// ..
+@mixin gradient-main() {
+
+}
+
+
+@mixin gradient-border($top, $bottom, $width) {
+  @if $top {
+    border-top: $width solid transparent;
+  }
+  @if $bottom {
+    border-bottom: $width solid transparent;
+  }
+  border-image: url("/assets/images/main/posts/item/border.png") round;
+  border-image-slice: 30%;
+}

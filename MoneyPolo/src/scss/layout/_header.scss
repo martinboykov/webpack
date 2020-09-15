@@ -1,0 +1,329 @@
+/* Header */
+.header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0.902;
+  box-shadow: 0px 0px 30px 0px rgba(81, 81, 81, 0.5);
+  mix-blend-mode: normal;
+  z-index: 81;
+  @include transition(height);
+
+  .container {
+    max-width: 1366px;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    z-index: 82;
+
+    .logo {
+      margin-top: 15px; // custom - for pixel perfect
+      margin-left: 29px; // custom - for pixel perfect
+      z-index: 83;
+      @include transition(all);
+      &__link {
+        img {
+          width: 139px;
+          @include transition(all);
+        }
+      }
+    }
+
+    .nav {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+
+      .menu {
+        margin-right: 0px;
+        @include transition(transform);
+        height: 100%;
+
+        &__item {
+          display: inline-block;
+          padding-right: 27px; // custom - for pixel perfect
+          height: 100%;
+
+          &__link {
+            font-family: $font-open-sans-bold;
+            text-transform: uppercase;
+            font-size: 15px;
+            line-height: 90px;
+            color: $blue;
+            letter-spacing: -0.55px; // custom - for pixel perfect
+
+            &:hover,
+            &:active,
+            &:focus {
+              color: $light-green;
+            }
+
+
+          }
+
+          &.active {
+            a {
+              color: $light-green;
+
+            }
+          }
+        }
+
+        &__item:first-child {
+          // padding-left: 0px;
+        }
+
+        &__item:last-child {
+          padding-right: 0px;
+          transition: padding-right 0.125s;
+        }
+      }
+    }
+
+    .toggle {
+      display: none;
+      z-index: 85;
+    }
+  }
+}
+
+
+
+
+
+/*
+ ##Device = Desktops
+ min-width = 1366px
+*/
+
+@media screen and (min-width: $laptop + 1px) {
+  // SCSS
+
+}
+
+// intermidiate for padding for last nav item
+@media screen and (max-width: $laptop+50px) {
+
+  // SCSS
+  #last-nav-item {
+    padding-right: 50px;
+  }
+}
+
+/*
+	##Device = Laptops, Desktops
+	max-width = 1365px
+*/
+
+@media screen and (max-width: $laptop) {
+
+  // SCSS
+
+}
+
+// --------------------------------------
+// MOBILE PSD
+// --------------------------------------
+
+/*
+   ##Device = Tablets, Ipads (portrait)
+   max-width = 1024px
+*/
+
+@media screen and (max-width: $tablet-portrait) {
+
+  // SCSS
+  .header {
+    // position: relative;
+    // box-shadow: none;
+
+    .container {
+      padding: 0 50px;
+      height: 107px;
+      @include transition(all);
+      .logo {
+        margin-left: 0px;
+        margin-bottom: 15px;
+
+        &__link {
+          img {
+            width: 206px;
+          }
+        }
+      }
+
+
+
+      .nav {
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: $white;
+        box-shadow: 0 30px 30px -30px rgba(81, 81, 81, 0.5);
+        mix-blend-mode: normal;
+        padding-top: 100px;
+        display: flex;
+        opacity: 0.9;
+        transform: translateX(-103%);
+        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+        .menu {
+          margin-right: 0px;
+          display: flex;
+          flex-flow: column nowrap;
+
+          height: auto;
+          width: 100%;
+          padding: 0 50px;
+
+          &__item {
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            padding: 14px 0;
+
+            &__link {
+              font-family: $font-open-sans-bold;
+              text-transform: uppercase;
+              // font-weight: 700;
+              font-size: 36px;
+              line-height: 36px;
+              color: $blue;
+              letter-spacing: -1.5px; // custom - for pixel perfect
+            }
+          }
+
+          &__item:first-child {
+            padding-top: 95px;
+          }
+
+          &__item:last-child {
+            padding-bottom: 165px;
+          }
+        }
+      }
+
+      .nav.active {
+        transform: translateX(0%);
+
+        .menu {
+          &__item {
+            &__link {
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+      .toggle {
+        height: 100%;
+        width: 45px;
+        display: flex;
+
+        .toggle-button {
+          width: 100%;
+          height: 100%;
+          padding-top: 25px;
+
+          // https://w3bits.com/animated-menu-icon-css/
+          &:after,
+          &:before,
+          & div {
+            background: $blue;
+            border-radius: 50px;
+            content: "";
+            display: block;
+            height: 5px;
+            margin: 10px 0;
+            transition: all 0.2s ease-in-out;
+            width: 45px;
+          }
+
+          &.active {
+            width: 33px;
+
+            &:before {
+              transform: translateX(0px) translateY(16px) rotate(225deg);
+            }
+
+            &:after {
+              transform: translateX(0px) translateY(-14px) rotate(-225deg);
+            }
+
+            & div {
+              transform: scale(0);
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+/*
+   ##Device = Low Resolution Tablets, Mobiles (Landscape)
+   max-width = 768px
+*/
+
+@media screen and (max-width: $tablet) {
+
+  // SCSS
+
+}
+
+/*
+    ##Device = Most of the Smartphones Mobiles
+    max-width = 640px
+*/
+@media screen and (max-width: $mobile) {
+
+  // SCSS
+
+}
+
+
+/*
+    ##Device = Extra small smartphones
+    min-width = 420px max-width = 480px
+*/
+@media screen and (max-width: $mobile-small) {
+
+  // SCSS
+  .header {
+    .container {
+
+      padding: 0 15px;
+      @include transition(all);
+
+      .logo {
+        margin-top: 20px;
+
+        &__link {
+          img {
+            width: 170px;
+          }
+        }
+      }
+
+      .nav {
+        .menu {
+          padding: 0 15px;
+        }
+      }
+    }
+  }
+}

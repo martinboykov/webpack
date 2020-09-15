@@ -1,0 +1,21 @@
+// Fonts mixins
+@mixin font-smoothing {
+  // -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+}
+@mixin font-default($weight: 400, $style: normal) {
+  font-family: $font-default;
+  font-weight: $weight;
+  font-style: $style;
+  @include font-smoothing;
+}
+
+// Gradients mixins
+// ..
+
+
+// transition
+@mixin transition($obj, $speed: 0.125s) {
+  transition: $obj $speed  ease-in-out 0s;
+}
